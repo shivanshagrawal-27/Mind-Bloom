@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Analytics</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="navbar">
+    <div class="logo">🌸 MindBloom</div>
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="analytics.html" class="active">Analytics</a>
+      <a href="focus.html">Focus</a>
+    </div>
+  </div>
+
+  <h1>Analytics</h1>
+
+  <div class="grid">
+    <div class="card"><canvas id="barChart"></canvas></div>
+    <div class="card"><canvas id="lineChart"></canvas></div>
+  </div>
+
+  <div class="grid">
+    <div class="card"><canvas id="pieChart"></canvas></div>
+    <div class="card">
+      <h3>Heatmap</h3>
+      <div id="heatmap"></div>
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

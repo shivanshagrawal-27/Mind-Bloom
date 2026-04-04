@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <div class="logo">🌸 MindBloom</div>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="analytics.html">Analytics</a>
+      <a href="focus.html">Focus</a>
+    </div>
+
+    <button class="logout-btn">Logout</button>
+  </div>
+
+  <h1>Dashboard</h1>
+
+  <!-- MOOD SECTION -->
+  <div class="card">
+    <h2>How are you feeling right now?</h2>
+
+    <div class="mood-grid-big">
+
+      <div class="mood-box" onclick="setMood('happy', event)">😊<span>Happy</span></div>
+      <div class="mood-box" onclick="setMood('sad', event)">😔<span>Sad</span></div>
+      <div class="mood-box" onclick="setMood('angry', event)">😡<span>Angry</span></div>
+      <div class="mood-box" onclick="setMood('neutral', event)">😐<span>Neutral</span></div>
+
+      <div class="mood-box" onclick="setMood('tired', event)">😴<span>Tired</span></div>
+      <div class="mood-box" onclick="setMood('confused', event)">😵<span>Confused</span></div>
+      <div class="mood-box" onclick="setMood('calm', event)">😌<span>Calm</span></div>
+      <div class="mood-box" onclick="setMood('loved', event)">🥰<span>Loved</span></div>
+
+    </div>
+
+    <p id="selectedMood">Mood: Not selected</p>
+  </div>
+
+  <!-- TASKS -->
+  <div class="card">
+    <h2>Tasks</h2>
+
+    <div class="task-input">
+      <input id="taskInput" placeholder="Enter task">
+      <button onclick="addTask()">Add</button>
+    </div>
+
+    <ul id="taskList"></ul>
+    <p id="emptyMsg">No tasks yet 🚀</p>
+  </div>
+
+  <!-- SUGGESTION -->
+  <div class="card highlight center">
+    <h2>Smart Insight</h2>
+
+    <p id="suggestion" class="suggestion-text">
+      Select a mood to receive personalized guidance
+    </p>
+
+    <a href="focus.html" class="cta-btn">🚀 Start Focus Session</a>
+  </div>
+
+  <!-- SCORE -->
+  <div class="card small center">
+    <h3>🔥 Productivity Score</h3>
+    <p id="score">0</p>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
