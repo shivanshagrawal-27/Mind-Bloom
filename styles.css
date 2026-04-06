@@ -1,5 +1,4 @@
 :root {
-  /* Color System - Linear/Stripe Inspired */
   --bg-gradient-start: #111827;
   --bg-gradient-end: #030712;
   --text-primary: #f9fafb;
@@ -196,7 +195,6 @@ p { font-size: 1.125rem; line-height: 1.6; color: var(--text-secondary); }
 .toast.fadeOut { animation: slideOut 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
 @keyframes slideOut { to { opacity: 0; transform: translateX(100%); } }
 
-/* CHARTS OVERRIDE */
 canvas { max-height: 100%; max-width: 100%; }
 
 /* LIGHT THEME */
@@ -210,3 +208,74 @@ canvas { max-height: 100%; max-width: 100%; }
 
 .center { text-align: center; }
 .site-footer { margin-top: 60px; opacity: 0.7; }
+
+/* ================= MOBILE FIX ================= */
+@media (max-width: 768px) {
+
+  .container {
+    width: 92%;
+    padding: 20px 0;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 15px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .dashboard-grid,
+  .analytics-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+
+  .card {
+    padding: 20px;
+    border-radius: 18px;
+  }
+
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.4rem; }
+  h3 { font-size: 1.1rem; }
+  p { font-size: 0.95rem; }
+
+  button, .btn, .cta-btn {
+    width: 100%;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .task-input {
+    flex-direction: column;
+  }
+
+  .mood-selector {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  }
+
+  .mood-emoji {
+    font-size: 2rem;
+  }
+
+  .toast-container {
+    right: 10px;
+    left: 10px;
+  }
+
+  .toast {
+    width: 100%;
+    justify-content: center;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
