@@ -3,11 +3,13 @@
 🔗 Live Demo: https://shivanshagarwal-27.github.io/Mind-Bloom/  
 💻 GitHub: https://github.com/shivanshagarwal-27/Mind-Bloom  
 
+---
 
 MindBloom is a simple productivity dashboard that connects **mood, tasks, and consistency** into one system.
 
 Instead of tracking tasks alone, it focuses on how daily actions and emotional state together affect productivity.
 
+---
 
 ## ✨ Key Features
 
