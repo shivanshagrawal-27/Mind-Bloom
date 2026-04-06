@@ -1,62 +1,87 @@
 # 🌱 MindBloom – Productivity & Mood Analytics Dashboard
 
-🔗 Live Demo: https://shivanshagarwal-27.github.io/Mind-Bloom/  
-💻 GitHub: https://github.com/shivanshagarwal-27/Mind-Bloom  
+🔗 Live Demo: https://shivanshagarwal-27.github.io/Mind-Bloom/
+💻 GitHub Repo: https://github.com/shivanshagarwal-27/Mind-Bloom
 
 ---
 
-MindBloom is a simple productivity dashboard that connects **mood, tasks, and consistency** into one system.
+## Overview
 
-Instead of tracking tasks alone, it focuses on how daily actions and emotional state together affect productivity.
+MindBloom is a productivity dashboard that connects **mood, tasks, and consistency** into a single system.
+
+Instead of just tracking tasks, it focuses on how **emotional state + execution** together impact productivity.
+
+---
+
+## Screenshots
+
+### 🏠 Home Page
+
+![Home](assets/homepage.png)
+
+### 📊 Dashboard (Light Mode)
+
+![Dashboard Light](assets/dashboard.png)
+
+### 📈 Analytics
+
+![Analytics](assets/analytics.png)
 
 ---
 
 ## ✨ Key Features
 
-- 😊 Emoji-based mood tracking  
-- ✅ Task management (add / complete)  
-- 🔥 Streak tracking  
-- 📈 Dynamic productivity score  
-- 📊 Real-time analytics (Chart.js)  
-- ⏱️ Focus timer  
+* 😊 Emoji-based mood tracking
+* ✅ Task management (add / complete)
+* 🔥 Streak tracking
+* 📊 Dynamic productivity score
+* 📈 Visual analytics (Chart.js)
+* ⏱️ Focus timer (Deep Work Mode)
+* 🌗 Light / Dark mode support
 
 ---
 
 ## Core Logic
 
-**Score = (Completed Tasks × 10) + (Streak × 5) + Mood Impact**
+Productivity is calculated as:
 
-- Positive mood → +5  
-- Neutral → 0  
-- Negative mood → -3  
+Score = (Completed Tasks × 10) + (Streak × 5) + Mood Impact
+
+* Positive mood → +5
+* Neutral mood → 0
+* Negative mood → -3
 
 ---
 
 ## 💡 Approach
 
-- Designed features to be **interconnected**, not isolated  
-- Focused on **real-time feedback** through UI and analytics  
-- Built as a complete frontend system using **localStorage for state management**
+* Built features as an interconnected system, not isolated components
+* Focused on real-time feedback through UI and analytics
+* Used localStorage for state management
 
 ---
 
 ## Tech Stack
 
-- HTML  
-- CSS  
-- JavaScript  
-- Chart.js  
-- localStorage  
+* HTML
+* CSS
+* JavaScript
+* Chart.js
+* localStorage
 
 ---
 
 ## Outcome
 
 This project demonstrates:
-- Building a complete frontend application  
-- Connecting UI → data → analytics  
-- Structuring logic for a real-world use case  
+
+* Building a complete frontend application
+* Managing state without backend
+* Designing interactive UI with analytics
 
 ---
 
-👤 **Shivansh**
+## Author
+
+**Shivansh**
+B.Tech CSE (Data Science)
