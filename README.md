@@ -1,6 +1,6 @@
 # 🌱 MindBloom – Productivity & Mood Analytics Dashboard
 
-🔗 Live Demo: https://shivanshagarwal-27.github.io/Mind-Bloom/   
+🔗 Live Demo: https://shivanshagrawal-27.github.io/Mind-Bloom/   
 💻 GitHub Repo: https://github.com/shivanshagarwal-27/Mind-Bloom
 
 ---
