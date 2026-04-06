@@ -2,79 +2,119 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindBloom | Dashboard</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div class="container">
-
   <!-- NAVBAR -->
-  <div class="navbar">
-    <div class="logo">🌸 MindBloom</div>
-
-    <div class="nav-links">
+  <header class="navbar">
+    <div class="logo">MindBloom</div>
+    <nav class="nav-links">
       <a href="index.html">Home</a>
-      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="dashboard.html" class="active" aria-current="page">Dashboard</a>
       <a href="analytics.html">Analytics</a>
       <a href="focus.html">Focus</a>
+    </nav>
+    <div style="display: flex; align-items: center; gap: 15px;">
+      <button type="button" class="theme-toggle" onclick="toggleTheme()" style="background:transparent; border:none; box-shadow:none; font-size:1.2rem;">🌗</button>
+      <button type="button" class="btn">Logout</button>
     </div>
+  </header>
 
-    <button class="logout-btn">Logout</button>
-  </div>
+  <main style="padding-top: 20px;">
+    <section style="margin-bottom: 40px; text-align: left; display: flex; justify-content: space-between; align-items: flex-end;">
+      <div>
+        <h1 style="font-size: 3rem; margin-bottom: 8px;">Command Center</h1>
+        <p style="font-size: 1.1rem; color: var(--text-secondary);">Manage your daily input and measure your cognitive output.</p>
+      </div>
+      <button class="btn reset-btn" onclick="resetData()">🚨 Reset Data</button>
+    </section>
 
-  <h1>Dashboard</h1>
+    <div class="dashboard-grid">
+      <!-- LEFT COLUMN (Main Action) -->
+      <div class="grid-left">
+        
+        <!-- Onboarding Guide -->
+        <div class="card" style="margin-bottom: 30px; background: rgba(99, 102, 241, 0.05); border: 1px solid rgba(99, 102, 241, 0.1);">
+          <h2>How to use MindBloom 🪴</h2>
+          <ul class="guide-list">
+            <li><span class="step-num">1</span> <div><span class="text-highlight">Select your mood.</span> Tracking how you feel recalibrates your expected performance baseline.</div></li>
+            <li><span class="step-num">2</span> <div><span class="text-highlight">Add your tasks.</span> Write down exactly what must be done today.</div></li>
+            <li><span class="step-num">3</span> <div><span class="text-highlight">Execute.</span> Check off tasks to watch your Productivity Score rapidly increase.</div></li>
+          </ul>
+        </div>
+        
+        <div class="card" style="margin-top:0;">
+          <h2>How are you feeling?</h2>
+          <div class="mood-selector">
+            <div class="mood-btn" onclick="logMood('happy')"><span class="mood-emoji">😊</span><span class="mood-label">Happy</span></div>
+            <div class="mood-btn" onclick="logMood('loved')"><span class="mood-emoji">❤️</span><span class="mood-label">Loved</span></div>
+            <div class="mood-btn" onclick="logMood('calm')"><span class="mood-emoji">😌</span><span class="mood-label">Calm</span></div>
+            <div class="mood-btn" onclick="logMood('neutral')"><span class="mood-emoji">😐</span><span class="mood-label">Neutral</span></div>
+            <div class="mood-btn" onclick="logMood('sad')"><span class="mood-emoji">😢</span><span class="mood-label">Sad</span></div>
+            <div class="mood-btn" onclick="logMood('angry')"><span class="mood-emoji">😡</span><span class="mood-label">Angry</span></div>
+            <div class="mood-btn" onclick="logMood('tired')"><span class="mood-emoji">😴</span><span class="mood-label">Tired</span></div>
+            <div class="mood-btn" onclick="logMood('confused')"><span class="mood-emoji">😕</span><span class="mood-label">Confused</span></div>
+          </div>
+          <p id="selectedMoodText" style="margin-top: 20px; font-weight: 500; color: var(--accent-secondary); text-align: center;">Selected Mood: None</p>
+        </div>
 
-  <!-- MOOD SECTION -->
-  <div class="card">
-    <h2>How are you feeling right now?</h2>
+        <div class="card" style="margin-top: 30px;">
+          <h2>Task Execution</h2>
+          <p class="text-muted">Prioritize your output and execute with clarity.</p>
+          <div class="task-input">
+            <input type="text" id="taskInput" placeholder="Add a high-leverage task..." onkeypress="if(event.key === 'Enter') addTask()">
+            <button class="cta-btn" style="margin-top: 0; padding: 12px 24px;" onclick="addTask()">Save</button>
+          </div>
+          <ul id="taskList"></ul>
+        </div>
+      </div>
 
-    <div class="mood-grid-big">
+      <!-- RIGHT COLUMN (Insights) -->
+      <div class="grid-right">
+        <div class="card" style="margin-top:0; border-top: 2px solid var(--accent-secondary);">
+          <h3 style="color: var(--text-secondary); font-size: 1rem; margin-bottom: 5px;">Productivity Score</h3>
+          <h1 id="score-numeric" style="font-size: 4rem; color: var(--text-primary); margin-bottom: 5px;">0</h1>
+          <h3 id="score-label" style="font-size: 1rem; color: #10b981;">Building Consistency</h3>
+          <div class="progress-container">
+            <div id="score-progress-fill" class="progress-fill"></div>
+          </div>
+        </div>
+        
+        <div class="card" style="margin-top: 30px;">
+          <h3 style="font-size: 1.2rem; margin-bottom: 10px;">How your score works</h3>
+          <p class="text-muted" style="font-size: 0.9rem;">Your score mathematically computes your actual cognitive output against your emotional baseline.</p>
+          
+          <div class="score-breakdown">
+            <div class="score-row"><span>Tasks Completed (x10)</span> <strong id="breakdown-tasks" style="color: #10b981;">+0</strong></div>
+            <div class="score-row"><span>Active Streak (x5)</span> <strong id="breakdown-streak" style="color: #6366f1;">+0</strong></div>
+            <div class="score-row"><span>Mood Baseline</span> <strong id="breakdown-mood" style="color: var(--text-secondary);">+0</strong></div>
+          </div>
+        </div>
 
-      <div class="mood-box" onclick="setMood('happy', event)">😊<span>Happy</span></div>
-      <div class="mood-box" onclick="setMood('sad', event)">😔<span>Sad</span></div>
-      <div class="mood-box" onclick="setMood('angry', event)">😡<span>Angry</span></div>
-      <div class="mood-box" onclick="setMood('neutral', event)">😐<span>Neutral</span></div>
-
-      <div class="mood-box" onclick="setMood('tired', event)">😴<span>Tired</span></div>
-      <div class="mood-box" onclick="setMood('confused', event)">😵<span>Confused</span></div>
-      <div class="mood-box" onclick="setMood('calm', event)">😌<span>Calm</span></div>
-      <div class="mood-box" onclick="setMood('loved', event)">🥰<span>Loved</span></div>
-
+        <div class="card" style="margin-top: 30px;">
+          <h3 style="font-size: 1.2rem; margin-bottom: 20px;">Quick Stats</h3>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid var(--glass-border);">
+            <span style="color: var(--text-secondary);">Tasks Completed</span>
+            <strong id="stats-tasks">0 / 0</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span style="color: var(--text-secondary);">Active Streak</span>
+            <strong id="stats-streak" style="color: var(--accent-secondary);">0 Days</strong>
+          </div>
+        </div>
+        
+      </div>
     </div>
+  </main>
 
-    <p id="selectedMood">Mood: Not selected</p>
-  </div>
-
-  <!-- TASKS -->
-  <div class="card">
-    <h2>Tasks</h2>
-
-    <div class="task-input">
-      <input id="taskInput" placeholder="Enter task">
-      <button onclick="addTask()">Add</button>
-    </div>
-
-    <ul id="taskList"></ul>
-    <p id="emptyMsg">No tasks yet 🚀</p>
-  </div>
-
-  <!-- SUGGESTION -->
-  <div class="card highlight center">
-    <h2>Smart Insight</h2>
-
-    <p id="suggestion" class="suggestion-text">
-      Select a mood to receive personalized guidance
-    </p>
-
-    <a href="focus.html" class="cta-btn">🚀 Start Focus Session</a>
-  </div>
-
-  <!-- SCORE -->
-  <div class="card small center">
-    <h3>🔥 Productivity Score</h3>
-    <p id="score">0</p>
-  </div>
+  <footer class="center site-footer">
+    <p><small>© 2026 MindBloom • Built for better minds</small></p>
+  </footer>
 
 </div>
 

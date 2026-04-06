@@ -1,76 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MindBloom</title>
+  <title>MindBloom | Home</title>
+
   <link rel="stylesheet" href="styles.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<div class="container">
+  <div class="container">
 
-  <!-- NAVBAR -->
-  <div class="navbar">
-    <div class="logo">🌸 MindBloom</div>
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="logo">MindBloom</div>
 
-    <div class="nav-links">
-      <a href="index.html" class="active">Home</a>
-      <a href="dashboard.html">Dashboard</a>
-      <a href="analytics.html">Analytics</a>
-      <a href="focus.html">Focus</a>
+      <nav class="nav-links">
+        <a href="index.html" class="active" aria-current="page">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="analytics.html">Analytics</a>
+        <a href="focus.html">Focus</a>
+      </nav>
+
+      <div>
+      <button type="button" onclick="toggleTheme()" style="margin-right: 10px;">🌗</button>
+      <button type="button" class="login-btn">Login</button>
     </div>
+    </header>
 
-    <button class="logout-btn">Login</button>
-  </div>
+    <main>
 
-  <!-- HERO SECTION -->
-  <div class="hero-section">
-    <h1>Welcome to <span>MindBloom</span></h1>
+      <!-- HERO SECTION -->
+    <section class="hero-section" style="max-width: 800px; margin: 0 auto; padding-top: 100px;">
+      <h1>Welcome to <span>MindBloom</span></h1>
 
-    <p>
-      Your calm digital space to balance emotional well-being  
-      and productivity with intelligent insights.
-    </p>
+      <p style="font-size: 1.25rem; font-weight: 400; opacity: 0.9; max-width: 650px; margin: 0 auto 30px;">
+        Balance emotional well-being and productivity with beautifully intelligent insights. 
+        Track your mind, eliminate distractions, and build your best self.
+      </p>
 
-    <a href="dashboard.html" class="cta-btn">🚀 Get Started</a>
-  </div>
-
-  <!-- FEATURES -->
-  <div class="features-section">
-
-    <h2>Designed for You</h2>
-
-    <div class="features-grid">
-
-      <div class="feature-card">
-        <div style="font-size: 28px;">❤️</div>
-        <h3>Mood-Based Intelligence</h3>
-        <p>Receive personalized guidance based on your emotional state.</p>
+      <div class="hero-buttons">
+        <a href="dashboard.html" class="cta-btn">Start Free Session</a>
+        <a href="focus.html" class="cta-btn" style="background: rgba(255,255,255,0.03); color: var(--text-primary); border: 1px solid var(--glass-border); box-shadow: none;">Enter Focus Mode</a>
       </div>
+    </section>
 
-      <div class="feature-card">
-        <div style="font-size: 28px;">🔒</div>
-        <h3>Safe & Private Space</h3>
-        <p>Your thoughts and progress remain secure and confidential.</p>
+      <!-- FEATURES -->
+    <section class="features-section" style="margin-top: 150px;">
+      <h2>Why use MindBloom?</h2>
+      <p style="opacity: 0.7; max-width: 500px; margin: 0 auto 50px;">Everything you need to maintain peak performance and a healthy mental state, all in one sleek interface.</p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon" style="margin-bottom: 20px;">📊</div>
+          <h3>Track Moods</h3>
+          <p>Instantly log how you feel and get custom AI-driven insights to recalibrate your mindset.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="margin-bottom: 20px;">⏱️</div>
+          <h3>Deep Focus</h3>
+          <p>Activate Focus Mode to eliminate sensory noise and drop right into peak cognitive flow.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="margin-bottom: 20px;">🔥</div>
+          <h3>Build Streaks</h3>
+          <p>Consistency compounds. Gamify your daily tasks and watch your productive streak expand.</p>
+        </div>
       </div>
+    </section>
 
-      <div class="feature-card">
-        <div style="font-size: 28px;">📊</div>
-        <h3>Progress Tracking</h3>
-        <p>Visualize your productivity patterns and emotional trends over time.</p>
-      </div>
+    </main>
 
-    </div>
+    <!-- FOOTER -->
+    <footer class="center site-footer">
+      <p><small>© 2026 MindBloom • Built for better minds</small></p>
+    </footer>
 
   </div>
 
-  <!-- FOOTER -->
-  <div class="center" style="margin-top: 60px; opacity: 0.7;">
-    <p>© 2026 MindBloom • Built for better minds</p>
-  </div>
-
-</div>
+<script src="script.js"></script>
 
 </body>
+
 </html>

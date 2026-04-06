@@ -1,41 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Focus</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindBloom | Focus</title>
+
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
 <div class="container">
 
-  <div class="navbar">
-    <div class="logo">🌸 MindBloom</div>
-    <div class="nav-links">
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">MindBloom</div>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
       <a href="dashboard.html">Dashboard</a>
       <a href="analytics.html">Analytics</a>
-      <a href="focus.html" class="active">Focus</a>
+      <a href="focus.html" class="active" aria-current="page">Focus</a>
+    </nav>
+
+    <div>
+      <button type="button" onclick="toggleTheme()" style="margin-right: 10px;">🌗</button>
+      <button type="button" class="logout-btn">Logout</button>
     </div>
-  </div>
+  </header>
 
-  <h1>Focus Mode</h1>
+  <main style="max-width: 700px; margin: 0 auto; padding-top: 40px;">
 
-  <div class="card center">
-    <!-- <h2>Pomodoro</h2>
-    <p id="timer">25:00</p>
-    <button onclick="startTimer()">Start</button> -->
-    <h2>⚡ Deep Focus Session</h2>
+    <!-- TITLE -->
+    <section style="text-align: center; margin-bottom: 20px;">
+      <h1>Focus Mode</h1>
+    </section>
 
-<p style="opacity: 0.7; margin-bottom: 10px;">
-  Eliminate distractions. Enter your peak productivity zone.
-</p>
+    <!-- FOCUS CARD -->
+    <section class="card center">
 
-<p id="timer" style="font-size: 3rem; margin: 20px 0;">25:00</p>
+      <h2>Deep Focus Session</h2>
 
-<button onclick="startTimer()" class="cta-btn">🚀 Start Session</button>
-  </div>
+      <p style="color: var(--text-secondary); margin-bottom: 30px;">
+        Eliminate distractions. Enter your peak productivity zone.
+      </p>
+
+      <p id="timer" style="font-size: 3rem; margin: 20px 0;">25:00</p>
+
+      <button type="button" onclick="startTimer()" class="cta-btn">Start Session</button>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="center site-footer">
+    <p><small>© 2026 MindBloom • Built for better minds</small></p>
+  </footer>
 
 </div>
 
 <script src="script.js"></script>
+
 </body>
 </html>

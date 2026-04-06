@@ -1,40 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Analytics</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindBloom | Analytics</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
 <div class="container">
 
-  <div class="navbar">
-    <div class="logo">🌸 MindBloom</div>
-    <div class="nav-links">
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">MindBloom</div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
       <a href="dashboard.html">Dashboard</a>
-      <a href="analytics.html" class="active">Analytics</a>
+      <a href="analytics.html" class="active" aria-current="page">Analytics</a>
       <a href="focus.html">Focus</a>
+    </nav>
+    <div style="display: flex; align-items: center; gap: 15px;">
+      <button type="button" class="theme-toggle" onclick="toggleTheme()" style="background:transparent; border:none; box-shadow:none; font-size:1.2rem;">🌗</button>
+      <button type="button" class="btn">Logout</button>
     </div>
-  </div>
+  </header>
 
-  <h1>Analytics</h1>
+  <main style="max-width: 1200px; margin: 0 auto; padding-top: 20px;">
+    <!-- TITLE -->
+    <section style="margin-bottom: 50px;">
+      <h1 style="font-size: 3rem; margin-bottom: 8px;">Performance Analytics</h1>
+      <p style="font-size: 1.1rem; color: var(--text-secondary);">Unpack your behavioral trends and cognitive output over time.</p>
+    </section>
 
-  <div class="grid">
-    <div class="card"><canvas id="barChart"></canvas></div>
-    <div class="card"><canvas id="lineChart"></canvas></div>
-  </div>
+    <!-- CHARTS GRID -->
+    <div class="analytics-grid">
+      
+      <div class="card" style="margin:0;">
+        <h3 style="font-size: 1.2rem; margin-bottom: 5px;">Score Trend (7 Days)</h3>
+        <p class="text-muted" style="margin-bottom: 20px; font-size: 0.9rem;">Measures your compound productivity over the trailing week.</p>
+        <div style="position: relative; height: 240px; width: 100%;">
+          <canvas id="lineChart"></canvas>
+        </div>
+      </div>
 
-  <div class="grid">
-    <div class="card"><canvas id="pieChart"></canvas></div>
-    <div class="card">
-      <h3>Heatmap</h3>
-      <div id="heatmap"></div>
+      <div class="card" style="margin:0;">
+        <h3 style="font-size: 1.2rem; margin-bottom: 5px;">Mood Frequency</h3>
+        <p class="text-muted" style="margin-bottom: 20px; font-size: 0.9rem;">Visualizes your aggregate emotional baselines across all logs.</p>
+        <div style="position: relative; height: 240px; width: 100%;">
+          <canvas id="barChart"></canvas>
+        </div>
+      </div>
+
+      <div class="card" style="margin:0;">
+        <h3 style="font-size: 1.2rem; margin-bottom: 5px;">Task Execution Ratio</h3>
+        <p class="text-muted" style="margin-bottom: 20px; font-size: 0.9rem;">Compares tasks completed vs tasks ignored or currently pending.</p>
+        <div style="position: relative; height: 240px; width: 100%; display: flex; justify-content: center;">
+          <canvas id="pieChart"></canvas>
+        </div>
+      </div>
+
+      <div class="card" style="margin:0; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: rgba(99, 102, 241, 0.05);">
+        <h3 style="font-size: 1.2rem; margin-bottom: 5px;">Consistency Metrics</h3>
+        <p class="text-muted" style="margin-bottom: 20px; font-size: 0.9rem;">Advanced insights calculated from your real-time input history.</p>
+
+        <h1 style="font-size: 5rem; color: #10b981; line-height: 1;">+14%</h1>
+        <p style="color: var(--text-primary); font-weight: 500; margin-top: 15px; max-width: 250px;">Your output velocity has trended positively. Keep fighting friction.</p>
+      </div>
+
     </div>
-  </div>
+  </main>
+
+  <footer class="center site-footer">
+    <p><small>© 2026 MindBloom • Built for better minds</small></p>
+  </footer>
 
 </div>
 
 <script src="script.js"></script>
+
 </body>
 </html>
